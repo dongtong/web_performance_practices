@@ -1,2 +1,6 @@
-# web_performance_practices
-How to make your website faster and faster!
+## Website性能优化实践
+
+###介绍
+
+    网站性能优化，前提是你不要用类似Mac Pro这样的怪兽级电脑，加上100M带宽的客观环境去衡量网站的性能。应该考虑大众的网络带宽以及CPU状况。
+
