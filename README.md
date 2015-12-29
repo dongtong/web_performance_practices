@@ -64,7 +64,7 @@
 
 #### 2.1 [预加载](https://css-tricks.com/prefetching-preloading-prebrowsing/)
 
-预加载是一种经常被忽略的页面优化方式，它可以预测将要加载的资源。这些预加载的资源可能在当前页面使用，也可能在将来可能访问的页面使用。开发页面时可以做一些大胆性的预测，在不不影响当前页面的性能前提下，预加载这部分资源。*大部分预加载技术移动端不支持，PC支持有限*。当前预加载资源主要有以下几种:
+各种 W3C 标准的预处理，但不是所有浏览器都支持。预加载是一种经常被忽略的页面优化方式，它可以预测将要加载的资源。这些预加载的资源可能在当前页面使用，也可能在将来可能访问的页面使用。开发页面时可以做一些大胆性的预测，在不不影响当前页面的性能前提下，预加载这部分资源。*大部分预加载技术移动端不支持，PC支持有限*。当前预加载资源主要有以下几种:
 
 * dns-prefetch
 
@@ -105,5 +105,16 @@
     
         <link ref="preload" href="//example.com/images/a.png" />
 
-#### 2.2 优化点方向
+#### 2.2 [Web Font优化](http://velocityconf.com/devops-web-performance-ny-2015/public/schedule/detail/46234)
 
+web fonts 加载完成后会导致已加载的 DOM 回流，解决方式有 2 个：
+
+- 减少文件大小按需加载；
+- 使用 woff 2 比 woff 小 30%
+- 尽早的触发 fonts 下载
+
+但仍然无法根本解决延迟下载导致的回流问题，只是尽可能的将时间缩短。尤其是使用 iconfont 时，性能较低的机型会先展示一个方框，加载完后才显示正确的图形。
+
+#### 2.3 [Flexbox布局](http://velocityconf.com/devops-web-performance-ny-2015/public/schedule/detail/43921)
+
+flexbox 的性能，pageload 时间比 float 快大约 40%，resize，scroll 时的性能消耗都有较大提升。
