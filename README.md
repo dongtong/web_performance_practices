@@ -118,3 +118,19 @@ web fonts 加载完成后会导致已加载的 DOM 回流，解决方式有 2 �
 #### 2.3 [Flexbox布局](http://velocityconf.com/devops-web-performance-ny-2015/public/schedule/detail/43921)
 
 flexbox 的性能，pageload 时间比 float 快大约 40%，resize，scroll 时的性能消耗都有较大提升。
+
+####流畅滚动的N条军规:移动(腾讯)
+
+- body上加上 -webkit-overflow-scrolling: touch
+
+- iOS尽量使用局部滚动
+
+- iOS引入ScrollFix 避免出界
+
+- Android下尽量使用全局滚动
+
+	- 尽量不使用overflow: auto
+	
+	- 使用min-height: 100%代替height: 100%
+	
+- iOS下带有滚动条且position: absolute的节点不要设置背景色
