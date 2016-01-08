@@ -149,15 +149,15 @@ flexbox 的性能，pageload 时间比 float 快大约 40%，resize，scroll 时
 网络请求过程如下:
 
 	DNS解析（100~200ms可以缓存）
-	          |
-	          V
-        建立TCP链接(三次握手100~200ms)
-                  |
-                  V
-        HTTP Request(半个Round-trip time) 
-                  |
-                  V
-        HTTP Response(Round-trip time不确定优化空间)
+	         |
+	         |
+            建立TCP链接(三次握手100~200ms)
+                    |
+                    |
+                HTTP Request(半个Round-trip time) 
+                       |
+                       |
+                HTTP Response(Round-trip time不确定优化空间)
 	
 	注: Round-trip time是回路时间，通俗来说就是一个请求发出到接受服务端回复的时间。PC上感觉不到，但是在移动端是可以明显感觉得到。
 	
