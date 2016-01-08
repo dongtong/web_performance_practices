@@ -156,17 +156,17 @@ flexbox 的性能，pageload 时间比 float 快大约 40%，resize，scroll 时
 
 网络耗时测定：
 
-    - HTML5 提供了网络测速方法 (一张图)
-    - Navigation Timing: 获取主页相关的性能数据
-    - Resource Timing: 获取主页相关资源的性能数据(iframe, image, script, audio, video ...)
+    1. HTML5 提供了网络测速方法 (一张图)
+    2. Navigation Timing: 获取主页相关的性能数据
+    3. Resource Timing: 获取主页相关资源的性能数据(iframe, image, script, audio, video ...)
 
 网络请求目标：
 
-    - 减少请求数
-    - 减少传输体积(首屏每个请求控制在14k以内，阿里有一个详细的计算)
-    - 尽可能利用缓存
-    - 缩短关键路径
-    - 合理安排请求顺序
+    1. 减少请求数
+    2. 减少传输体积(首屏每个请求控制在14k以内，阿里有一个详细的计算)
+    3. 尽可能利用缓存
+    4. 缩短关键路径
+    5. 合理安排请求顺序
 
 - 渲染优化
 
@@ -179,3 +179,7 @@ webkit引擎在渲染页面时，渲染时间DOM + CSSOM =>渲染时间。优化
 - 链路复用
 
 TCP三次握手，设置web服务器的timeout时间，在此时间内，HTTP请求会被保持(keep-alive)。如果在timeout内再次发送请求将不会再建立TCP握手。腾讯有测量这段节省时间差不多是200ms RTT时间。但是带来的问题是Web服务器再接受请求时，开辟的内存在keep-alive时间内不能立刻释放，表现出来的情况就是服务器的内容上升，这个应该在高并发，访问量大的情况下，预先扩展内存。
+
+- 资源内联
+
+在开发阶段，可以将HTML， CSS, JavaScript分离，便于开发维护。但是如果能保证这些资源控制在14k以内的话，可以使用构建工具Gulp, Webpack等在发布的时候，将外联资源内联到HTML页面中。一般情况HTML DOM渲染完后，运行外联样式、JavaScript都是有性能损耗的。
