@@ -155,17 +155,17 @@ flexbox 的性能，pageload 时间比 float 快大约 40%，resize，scroll 时
 
 网络耗时测定：
 
-  - HTML5 提供了网络测速方法 (一张图)
-  - Navigation Timing: 获取主页相关的性能数据
-  - Resource Timing: 获取主页相关资源的性能数据(iframe, image, script, audio, video ...)
+    - HTML5 提供了网络测速方法 (一张图)
+    - Navigation Timing: 获取主页相关的性能数据
+    - Resource Timing: 获取主页相关资源的性能数据(iframe, image, script, audio, video ...)
 
 网络请求目标：
 
-  - 减少请求数
-  - 减少传输体积(首屏每个请求控制在14k以内，阿里有一个详细的计算)
-  - 尽可能利用缓存
-  - 缩短关键路径
-  - 合理安排请求顺序
+    - 减少请求数
+    - 减少传输体积(首屏每个请求控制在14k以内，阿里有一个详细的计算)
+    - 尽可能利用缓存
+    - 缩短关键路径
+    - 合理安排请求顺序
 
 - 渲染优化
 
