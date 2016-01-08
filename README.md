@@ -68,8 +68,9 @@
 
 * dns-prefetch
 
-   提前告知浏览器将要加载资源(页面)的DNS,减少DNS查询时间。如果页面加载跨域资源、CDN资源、页面跳转时，比较有用。chrome会从浏览缓存记录中解析DNS，但是如果没有，此方法便派上用场。所以不管浏览器会不会提前解析DNS,使用此方法。
+   提前告知浏览器将要加载资源(页面)的DNS,减少DNS查询时间。如果页面加载跨域资源、CDN资源、页面跳转时，比较有用。chrome会从浏览缓存记录中解析DNS，但是如果没有，此方法便派上用场。所以不管浏览器会不会提前解析DNS,使用此方法。目前dns-prefetch在移动端支持不是很好，但是相信这个标准将来会被各个厂商支持的。
   
+        <meta http-equiv="x-dns-prefetch-control" content="on" />
         <link ref="dns-prefetch" href="//resource.com" />
         
 * subresource
