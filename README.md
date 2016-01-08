@@ -153,6 +153,20 @@ flexbox 的性能，pageload 时间比 float 快大约 40%，resize，scroll 时
 	
 以上网络是否可以控制在1s以内？答案是可以的(俗称秒开)。4G网络比2G网络快，其实Round-trip time提升很大。可以使用Chrome模拟器模拟不同网络，查看RTT。有时一个空请求都需要耗费几百毫秒时间，这个时间就是RTT。
 
+网络耗时测定：
+
+  - HTML5 提供了网络测速方法 (一张图)
+  - Navigation Timing: 获取主页相关的性能数据
+  - Resource Timing: 获取主页相关资源的性能数据(iframe, image, script, audio, video ...)
+
+网络请求目标：
+
+  - 减少请求数
+  - 减少传输体积(首屏每个请求控制在14k以内，阿里有一个详细的计算)
+  - 尽可能利用缓存
+  - 缩短关键路径
+  - 合理安排请求顺序
+
 - 渲染优化
 
 webkit引擎在渲染页面时，渲染时间DOM + CSSOM =>渲染时间。优化DOM操作，优化JavaScript, 优化CSS都是比较有限的。在网络优化基本完成时，可以考虑这部分优化。
