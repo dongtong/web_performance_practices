@@ -157,9 +157,10 @@ flexbox 的性能，pageload 时间比 float 快大约 40%，resize，scroll 时
                 HTTP Request(半个Round-trip time) 
                        |
                        |
-                HTTP Response(Round-trip time不确定优化空间)
+                  HTTP Response(Round-trip time不确定优化空间)
 	
-	注: Round-trip time是回路时间，通俗来说就是一个请求发出到接受服务端回复的时间。PC上感觉不到，但是在移动端是可以明显感觉得到。
+	注: Round-trip time是回路时间，通俗来说就是一个请求发出到接受服务端回复的时间。
+	    PC上感觉不到，但是在移动端是可以明显感觉得到。
 	
 以上网络是否可以控制在1s以内？答案是可以的(俗称秒开)。4G网络比2G网络快，其实Round-trip time提升很大。可以使用Chrome模拟器模拟不同网络，查看RTT。有时一个空请求都需要耗费几百毫秒时间，这个时间就是RTT。
 
