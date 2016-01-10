@@ -133,7 +133,7 @@ flexbox 的性能，pageload 时间比 float 快大约 40%，resize，scroll 时
 	- 尽量不使用overflow: auto
 	
 	- 使用min-height: 100%代替height: 100%
-	
+
 - iOS下带有滚动条且position: absolute的节点不要设置背景色
 - 
 #### 2.4 移动Web首屏优化
@@ -205,3 +205,9 @@ TCP三次握手，设置web服务器的timeout时间，在此时间内，HTTP请
 一般页面加载顺序是HTML->CSS->JavaScript(Ajax) ->渲染成功，中间有3个RTT。可以使用Node在服务端渲染HTML(CSS, JavaScript),根据服务端数据状态展示不同的试图给前端。
 
 同构(isomorphic)渲染是组件既可以在前端渲染，也可以在后端渲染成HTML字符串，然后返回到前端。这里具有代表的是React.js库。
+
+- 资源懒加载
+
+一般针对图片做懒加载。模版渲染时，不赋值給img src属性，使用占位图片并配合自定义属性，如data-src，然后计算DOM可视区域，如果图片在可视区域内，使用data-src赋值src属性，如果不在可视区域内，等待下拉时赋值src。有时下拉快要显示时，就开始赋值。
+
+但是注意一直下拉也会导致比较卡，因为占用的内存不能得到有效的释放。
